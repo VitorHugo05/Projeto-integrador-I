@@ -15,7 +15,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import jakarta.persistence.*;
 
 @MappedSuperclass
-public class UserEntity implements UserDetails {
+public abstract class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

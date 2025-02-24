@@ -1,12 +1,8 @@
 package com.einstein.event.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_course")
@@ -21,13 +17,21 @@ public class CourseEntity {
     @JoinColumn(name = "coordinator_id", unique = true, nullable = false)
     private CoordinatorEntity coordinator;
 
+    @OneToMany(mappedBy = "course")
+    private List<StudentEntity> students;
+
     public CourseEntity() {
     }
 
-    public CourseEntity(Long id, String name, CoordinatorEntity coordinator) {
+    public CourseEntity(Long id, String name, CoordinatorEntity coordinator, List<StudentEntity> students) {
         this.id = id;
         this.name = name;
         this.coordinator = coordinator;
+        this.students = students;
+    }
+
+    public List<StudentEntity> getStudents() {
+        return students;
     }
 
     public Long getId() {

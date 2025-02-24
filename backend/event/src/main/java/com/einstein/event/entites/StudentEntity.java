@@ -23,8 +23,8 @@ public class StudentEntity extends UserEntity {
     public StudentEntity() {
     }
 
-    public StudentEntity(Long id, String name, String ra, String email, String phone, String password, CourseEntity course, List<StudentPresenceEntity> presences) {
-        super(id, email, password);
+    public StudentEntity(Long id, String email, String password, String name, String ra, String phone, CourseEntity course, List<StudentPresenceEntity> presences) {
+        super(id, email, password, UserRole.STUDENT);
         this.name = name;
         this.ra = ra;
         this.phone = phone;

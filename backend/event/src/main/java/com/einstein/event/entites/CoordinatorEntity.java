@@ -22,12 +22,21 @@ public class CoordinatorEntity extends UserEntity {
     public CoordinatorEntity() {
     }
 
-    public CoordinatorEntity(Long id, String name, String cpf, String email, String phone, String password, List<EventEntity> events) {
-        super(id, email, password);
+    public CoordinatorEntity(Long id, String email, String password, UserRole role, String name, String cpf, String phone, CourseEntity course, List<EventEntity> events) {
+        super(id, email, password, UserRole.COORDINATOR);
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
+        this.course = course;
         this.events = events;
+    }
+
+    public CourseEntity getCourse() {
+        return course;
+    }
+
+    public void setCourse(CourseEntity course) {
+        this.course = course;
     }
 
     public Long getId() {
