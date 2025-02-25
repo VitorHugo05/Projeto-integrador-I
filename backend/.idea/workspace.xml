@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: added rector entity to your registration and login">
+    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: added update and delete methods in rector controller">
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/CoordinatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/CoordinatorRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CoordinatorDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CoordinatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740423776442</updated>
       <workItem from="1740423777905" duration="5655000" />
-      <workItem from="1740481605477" duration="4316000" />
+      <workItem from="1740481605477" duration="5230000" />
     </task>
     <task id="LOCAL-00001" summary="🚀 feat: added rector entity to your registration and login">
       <option name="closed" value="true" />
@@ -107,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740484999414</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="🚀 feat: added update and delete methods in rector controller">
+      <option name="closed" value="true" />
+      <created>1740511191878</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740511191878</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" feat: added rector entity to your registration and login" />
-    <option name="LAST_COMMIT_MESSAGE" value=" feat: added rector entity to your registration and login" />
+    <MESSAGE value=" feat: added update and delete methods in rector controller" />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat: added update and delete methods in rector controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
