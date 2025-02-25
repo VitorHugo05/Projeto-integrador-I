@@ -28,7 +28,7 @@ public class RectorController {
     private RectorService rectorService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<RectorResponseDto> getRector(@PathVariable Long id) {
+    public ResponseEntity<RectorResponseDto> findById(@PathVariable Long id) {
         RectorEntity rectorEntity = rectorService.findById(id);
         RectorResponseDto rectorResponseDto = rectorDtoMapper.toResponse(rectorEntity);
         return ResponseEntity.ok().body(rectorResponseDto);
@@ -53,5 +53,17 @@ public class RectorController {
                 .buildAndExpand(rectorEntity.getId())
                 .toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        rectorService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody RectorRequestDto rectorRequestDto) {
+        rectorService.update(rectorRequestDto, id);
+        return ResponseEntity.noContent().build();
     }
 }

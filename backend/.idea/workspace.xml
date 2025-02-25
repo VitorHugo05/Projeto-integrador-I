@@ -4,32 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/LoginRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/RectorRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/AuthResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/RectorResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CoordinatorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/RectorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/RectorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/RectorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/resources/application.yaml" afterDir="false" />
+    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: added rector entity to your registration and login">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,12 +97,25 @@
       <option name="presentableId" value="Default" />
       <updated>1740423776442</updated>
       <workItem from="1740423777905" duration="5655000" />
-      <workItem from="1740481605477" duration="3205000" />
+      <workItem from="1740481605477" duration="4316000" />
     </task>
+    <task id="LOCAL-00001" summary="🚀 feat: added rector entity to your registration and login">
+      <option name="closed" value="true" />
+      <created>1740484999414</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740484999414</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" feat: added rector entity to your registration and login" />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat: added rector entity to your registration and login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
