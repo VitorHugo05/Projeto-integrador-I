@@ -1,0 +1,57 @@
+package com.einstein.event.controllers;
+
+import com.einstein.event.dtos.request.RectorRequestDto;
+import com.einstein.event.dtos.response.RectorResponseDto;
+import com.einstein.event.entites.RectorEntity;
+import com.einstein.event.mapper.RectorDtoMapper;
+import com.einstein.event.services.RectorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/rector")
+public class RectorController {
+
+    @Autowired
+    private RectorDtoMapper rectorDtoMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private RectorService rectorService;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<RectorResponseDto> getRector(@PathVariable Long id) {
+        RectorEntity rectorEntity = rectorService.findById(id);
+        RectorResponseDto rectorResponseDto = rectorDtoMapper.toResponse(rectorEntity);
+        return ResponseEntity.ok().body(rectorResponseDto);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<RectorResponseDto>> findAll() {
+        List<RectorEntity> rectorEntityList = rectorService.findAll();
+        List<RectorResponseDto> rectorResponseDtoList = rectorEntityList.stream()
+                .map(rectorDtoMapper::toResponse)
+                .toList();
+        return ResponseEntity.ok().body(rectorResponseDtoList);
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> registerRector(@RequestBody RectorRequestDto rectorRequestDto) {
+        RectorEntity rectorEntity = rectorDtoMapper.toEntity(rectorRequestDto);
+        rectorEntity.setPassword(passwordEncoder.encode(rectorRequestDto.getPassword()));
+        rectorEntity = rectorService.insert(rectorEntity);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(rectorEntity.getId())
+                .toUri();
+        return ResponseEntity.created(uri).build();
+    }
+}

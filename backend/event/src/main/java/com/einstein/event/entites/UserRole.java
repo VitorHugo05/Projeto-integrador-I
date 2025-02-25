@@ -3,7 +3,8 @@ package com.einstein.event.entites;
 public enum UserRole {
     COORDINATOR("Coordinator"),
     RECTOR("Rector"),
-    STUDENT("Student");
+    STUDENT("Student"),
+    ADMIN("Admin");
 
     private String role;
 

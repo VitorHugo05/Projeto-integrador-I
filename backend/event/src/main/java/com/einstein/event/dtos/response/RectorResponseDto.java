@@ -1,24 +1,19 @@
-package com.einstein.event.entites;
+package com.einstein.event.dtos.response;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "tb_rector")
-public class RectorEntity extends UserEntity {
-
+public class RectorResponseDto {
     private String name;
     private String cpf;
     private String phone;
+    private String email;
 
-    public RectorEntity() {
+    public RectorResponseDto() {
     }
 
-    public RectorEntity(Long id, String email, String password, UserRole role, String name, String cpf, String phone) {
-        super(id, email, password, UserRole.RECTOR);
+    public RectorResponseDto(String name, String cpf, String phone, String email) {
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
+        this.email = email;
     }
 
     public String getName() {
@@ -43,5 +38,13 @@ public class RectorEntity extends UserEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
