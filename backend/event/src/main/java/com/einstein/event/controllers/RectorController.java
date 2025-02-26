@@ -1,13 +1,13 @@
 package com.einstein.event.controllers;
 
 import com.einstein.event.dtos.request.RectorRequestDto;
+import com.einstein.event.dtos.request.RectorUpdateRequestDto;
 import com.einstein.event.dtos.response.RectorResponseDto;
 import com.einstein.event.entites.RectorEntity;
 import com.einstein.event.mapper.RectorDtoMapper;
 import com.einstein.event.services.AuthorizationService;
 import com.einstein.event.services.RectorService;
 import com.einstein.event.services.exceptions.DataAlreadyExistException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -20,16 +20,36 @@ import java.util.List;
 @RequestMapping("/api/rector")
 public class RectorController {
 
-    @Autowired
-    private RectorDtoMapper rectorDtoMapper;
+    private final RectorDtoMapper rectorDtoMapper;
+    private final PasswordEncoder passwordEncoder;
+    private final RectorService rectorService;
+    private final AuthorizationService authorizationService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    public RectorController(RectorDtoMapper rectorDtoMapper, PasswordEncoder passwordEncoder, RectorService rectorService, AuthorizationService authorizationService) {
+        this.rectorDtoMapper = rectorDtoMapper;
+        this.passwordEncoder = passwordEncoder;
+        this.rectorService = rectorService;
+        this.authorizationService = authorizationService;
+    }
 
-    @Autowired
-    private RectorService rectorService;
-    @Autowired
-    private AuthorizationService authorizationService;
+    @PostMapping
+    public ResponseEntity<Void> insert(@RequestBody RectorRequestDto rectorRequestDto) {
+        if(authorizationService.validateEmail(rectorRequestDto.getEmail())) {
+            throw new DataAlreadyExistException("Email already registered.");
+        }
+        if(authorizationService.validateCpf(rectorRequestDto.getCpf())) {
+            throw new DataAlreadyExistException("CPF already registered");
+        }
+
+        RectorEntity rectorEntity = rectorDtoMapper.toEntity(rectorRequestDto);
+        rectorEntity.setPassword(passwordEncoder.encode(rectorRequestDto.getPassword()));
+        rectorEntity = rectorService.insert(rectorEntity);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(rectorEntity.getId())
+                .toUri();
+        return ResponseEntity.created(uri).build();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<RectorResponseDto> findById(@PathVariable Long id) {
@@ -47,24 +67,6 @@ public class RectorController {
         return ResponseEntity.ok().body(rectorResponseDtoList);
     }
 
-    @PostMapping
-    public ResponseEntity<Void> registerRector( @RequestBody RectorRequestDto rectorRequestDto) {
-        if(authorizationService.validateEmail(rectorRequestDto.getEmail())) {
-            throw new DataAlreadyExistException("Email already registered.");
-        }
-        if(authorizationService.validateCpf(rectorRequestDto.getCpf())) {
-            throw new DataAlreadyExistException("CPF already registered");
-        }
-        RectorEntity rectorEntity = rectorDtoMapper.toEntity(rectorRequestDto);
-        rectorEntity.setPassword(passwordEncoder.encode(rectorRequestDto.getPassword()));
-        rectorEntity = rectorService.insert(rectorEntity);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(rectorEntity.getId())
-                .toUri();
-        return ResponseEntity.created(uri).build();
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         rectorService.delete(id);
@@ -72,7 +74,7 @@ public class RectorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody RectorRequestDto rectorRequestDto) {
+    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody RectorUpdateRequestDto rectorRequestDto) {
         rectorService.update(rectorRequestDto, id);
         return ResponseEntity.noContent().build();
     }

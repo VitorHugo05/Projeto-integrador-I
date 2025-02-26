@@ -1,6 +1,7 @@
 package com.einstein.event.mapper;
 
 import com.einstein.event.dtos.request.RectorRequestDto;
+import com.einstein.event.dtos.request.RectorUpdateRequestDto;
 import com.einstein.event.dtos.response.RectorResponseDto;
 import com.einstein.event.entites.RectorEntity;
 import org.mapstruct.Mapper;
@@ -10,6 +11,7 @@ import org.mapstruct.Mapping;
 public interface RectorDtoMapper {
     @Mapping(target = "id", ignore = true)
     RectorEntity toEntity(RectorRequestDto rectorRequestDto);
+    RectorEntity toEntity(RectorUpdateRequestDto rectorRequestDto);
 
     RectorResponseDto toResponse(RectorEntity rectorEntity);
 }

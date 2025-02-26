@@ -10,7 +10,6 @@ import com.einstein.event.mapper.StudentDtoMapper;
 import com.einstein.event.services.StudentService;
 import com.einstein.event.services.exceptions.IncorrectCredentialsException;
 import com.einstein.event.services.exceptions.ObjectNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -26,18 +25,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private TokenService tokenService;
+    private final TokenService tokenService;
+    private final AuthenticationManager authenticationManager;
+    private final StudentDtoMapper studentDtoMapper;
+    private final PasswordEncoder passwordEncoder;
+    private final StudentService studentService;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private StudentDtoMapper studentDtoMapper;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    @Autowired
-    private StudentService studentService;
+    public AuthController(TokenService tokenService, AuthenticationManager authenticationManager, StudentDtoMapper studentDtoMapper, PasswordEncoder passwordEncoder, StudentService studentService) {
+        this.tokenService = tokenService;
+        this.authenticationManager = authenticationManager;
+        this.studentDtoMapper = studentDtoMapper;
+        this.passwordEncoder = passwordEncoder;
+        this.studentService = studentService;
+    }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto authRequestDto) {
