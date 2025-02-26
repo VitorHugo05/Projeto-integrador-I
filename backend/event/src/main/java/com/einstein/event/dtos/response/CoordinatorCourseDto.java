@@ -1,31 +1,19 @@
 package com.einstein.event.dtos.response;
 
-import com.einstein.event.entites.CourseEntity;
-
-public class CoordinatorResponseDto {
+public class CoordinatorCourseDto {
     private String name;
     private String cpf;
     private String phone;
     private String email;
-    private CourseEntity course;
 
-    public CoordinatorResponseDto() {
+    public CoordinatorCourseDto() {
     }
 
-    public CoordinatorResponseDto(String name, String cpf, String phone, String email, CourseEntity course) {
+    public CoordinatorCourseDto(String name, String cpf, String phone, String email) {
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
         this.email = email;
-        this.course = course;
-    }
-
-    public CourseEntity getCourse() {
-        return course;
-    }
-
-    public void setCourse(CourseEntity course) {
-        this.course = course;
     }
 
     public String getName() {

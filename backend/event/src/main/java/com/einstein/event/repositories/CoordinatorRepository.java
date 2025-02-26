@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface CoordinatorRepository extends JpaRepository<CoordinatorEntity, Long> {
     Optional<CoordinatorEntity> findByEmail(String email);
 
-    Optional<Object> findByCpf(String cpf);
+    Optional<CoordinatorEntity> findByCpf(String cpf);
 }

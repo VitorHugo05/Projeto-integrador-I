@@ -20,10 +20,13 @@ public class CoordinatorController {
 
     @Autowired
     private CoordinatorService coordinatorService;
+
     @Autowired
     private CoordinatorDtoMapper coordinatorDtoMapper;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
+
     @Autowired
     private AuthorizationService authorizationService;
 

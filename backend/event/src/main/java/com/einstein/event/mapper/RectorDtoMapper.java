@@ -10,5 +10,6 @@ import org.mapstruct.Mapping;
 public interface RectorDtoMapper {
     @Mapping(target = "id", ignore = true)
     RectorEntity toEntity(RectorRequestDto rectorRequestDto);
+
     RectorResponseDto toResponse(RectorEntity rectorEntity);
 }

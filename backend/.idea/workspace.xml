@@ -4,32 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: added insert and find by id methods in coordinator controller">
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/ExceptionHandlerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/StandardError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/ExceptionHandlerFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/AccessDeniedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/CustomAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/DataAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/IncorrectCredentialsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/InternalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/ObjectNotFoundException.java" afterDir="false" />
+    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🐛 fix: error handling in security system and creation of system exception handler">
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/CourseRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/StudentRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorCourseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CourseResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CourseDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/CoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/CoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/RectorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/CoordinatorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/CoordinatorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/RectorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/RectorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/CourseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/CourseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CoordinatorDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CoordinatorDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/RectorDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CoordinatorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CoordinatorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/RectorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/RectorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CoordinatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CoordinatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/CustomAccessDeniedHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -120,7 +118,7 @@
       <updated>1740423776442</updated>
       <workItem from="1740423777905" duration="5655000" />
       <workItem from="1740481605477" duration="7994000" />
-      <workItem from="1740582160584" duration="5787000" />
+      <workItem from="1740582160584" duration="11031000" />
     </task>
     <task id="LOCAL-00001" summary="🚀 feat: added rector entity to your registration and login">
       <option name="closed" value="true" />
@@ -146,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740512072216</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="🐛 fix: error handling in security system and creation of system exception handler">
+      <option name="closed" value="true" />
+      <created>1740589628202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740589628202</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +162,8 @@
     <MESSAGE value=" feat: added rector entity to your registration and login" />
     <MESSAGE value=" feat: added update and delete methods in rector controller" />
     <MESSAGE value=" feat: added insert and find by id methods in coordinator controller" />
-    <option name="LAST_COMMIT_MESSAGE" value=" feat: added insert and find by id methods in coordinator controller" />
+    <MESSAGE value=" fix: error handling in security system and creation of system exception handler" />
+    <option name="LAST_COMMIT_MESSAGE" value=" fix: error handling in security system and creation of system exception handler" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

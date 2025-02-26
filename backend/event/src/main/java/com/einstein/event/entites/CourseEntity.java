@@ -1,7 +1,9 @@
 package com.einstein.event.entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,10 +17,11 @@ public class CourseEntity {
 
     @OneToOne
     @JoinColumn(name = "coordinator_id", unique = true, nullable = false)
+    @JsonIgnore
     private CoordinatorEntity coordinator;
 
     @OneToMany(mappedBy = "course")
-    private List<StudentEntity> students;
+    private List<StudentEntity> students = new ArrayList<>();
 
     public CourseEntity() {
     }

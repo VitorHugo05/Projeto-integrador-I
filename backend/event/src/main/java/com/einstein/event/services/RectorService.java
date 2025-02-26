@@ -4,6 +4,8 @@ import com.einstein.event.dtos.request.RectorRequestDto;
 import com.einstein.event.entites.RectorEntity;
 import com.einstein.event.mapper.RectorDtoMapper;
 import com.einstein.event.repositories.RectorRepository;
+import com.einstein.event.services.exceptions.DataAlreadyExistException;
+import com.einstein.event.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +27,12 @@ public class RectorService {
         if(rectorRepository.findByCpf(rectorEntity.getCpf()).isEmpty()) {
             return rectorRepository.save(rectorEntity);
         } else {
-            throw new RuntimeException("Ja existe algum cadastro com este cpf");
+            throw new DataAlreadyExistException("Is there already a registration with this CPF");
         }
     }
 
     public RectorEntity findById(Long id) {
-        return rectorRepository.findById(id).orElseThrow(() -> new RuntimeException("Erro ao inserir rector"));
+        return rectorRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Rector not found"));
     }
 
     public void delete(Long id) {

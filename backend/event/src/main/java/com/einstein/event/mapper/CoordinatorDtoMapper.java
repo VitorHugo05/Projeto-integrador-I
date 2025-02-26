@@ -8,5 +8,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface CoordinatorDtoMapper {
     CoordinatorEntity toEntity(CoordinatorRequestDto coordinatorRequestDto);
+
     CoordinatorResponseDto toResponse(CoordinatorEntity coordinatorEntity);
 }
