@@ -47,4 +47,8 @@ public class CourseService {
         findById(id);
         courseRepository.deleteById(id);
     }
+
+    public CourseEntity findByName(String course) {
+        return courseRepository.findByName(course).orElseThrow(() -> new ObjectNotFoundException("Course not found"));
+    }
 }

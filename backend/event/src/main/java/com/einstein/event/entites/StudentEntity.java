@@ -9,8 +9,10 @@ import java.util.List;
 @Table(name = "tb_student")
 public class StudentEntity extends UserEntity {
 
-    private String name;
+    @Column(unique = true)
     private String ra;
+
+    private String name;
     private String phone;
 
     @ManyToOne
