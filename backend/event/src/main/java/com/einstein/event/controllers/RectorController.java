@@ -4,7 +4,9 @@ import com.einstein.event.dtos.request.RectorRequestDto;
 import com.einstein.event.dtos.response.RectorResponseDto;
 import com.einstein.event.entites.RectorEntity;
 import com.einstein.event.mapper.RectorDtoMapper;
+import com.einstein.event.services.AuthorizationService;
 import com.einstein.event.services.RectorService;
+import com.einstein.event.services.exceptions.DataAlreadyExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +28,8 @@ public class RectorController {
 
     @Autowired
     private RectorService rectorService;
+    @Autowired
+    private AuthorizationService authorizationService;
 
     @GetMapping("/{id}")
     public ResponseEntity<RectorResponseDto> findById(@PathVariable Long id) {
@@ -44,7 +48,13 @@ public class RectorController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> registerRector(@RequestBody RectorRequestDto rectorRequestDto) {
+    public ResponseEntity<Void> registerRector( @RequestBody RectorRequestDto rectorRequestDto) {
+        if(authorizationService.validateEmail(rectorRequestDto.getEmail())) {
+            throw new DataAlreadyExistException("Email already registered.");
+        }
+        if(authorizationService.validateCpf(rectorRequestDto.getCpf())) {
+            throw new DataAlreadyExistException("CPF already registered");
+        }
         RectorEntity rectorEntity = rectorDtoMapper.toEntity(rectorRequestDto);
         rectorEntity.setPassword(passwordEncoder.encode(rectorRequestDto.getPassword()));
         rectorEntity = rectorService.insert(rectorEntity);

@@ -4,6 +4,8 @@ import com.einstein.event.dtos.request.LoginRequestDto;
 import com.einstein.event.dtos.response.AuthResponseDto;
 import com.einstein.event.entites.UserEntity;
 import com.einstein.event.infra.security.TokenService;
+import com.einstein.event.services.exceptions.IncorrectCredentialsException;
+import com.einstein.event.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,8 +34,10 @@ public class AuthController {
             var auth = authenticationManager.authenticate(usernamePassword);
             var token = tokenService.generateToken((UserEntity) auth.getPrincipal());
             return ResponseEntity.ok().body(new AuthResponseDto(token));
-        }  catch (BadCredentialsException | UsernameNotFoundException e) {
-            throw new RuntimeException("error");
+        } catch (UsernameNotFoundException e) {
+            throw new ObjectNotFoundException("User not found");
+        } catch (BadCredentialsException e) {
+            throw new IncorrectCredentialsException("Invalid email or password");
         }
     }
 }

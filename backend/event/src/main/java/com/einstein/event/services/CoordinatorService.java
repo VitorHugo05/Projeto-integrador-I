@@ -15,8 +15,7 @@ public class CoordinatorService {
     @Autowired
     private CoordinatorDtoMapper coordinatorDtoMapper;
 
-    public CoordinatorEntity insert(CoordinatorRequestDto coordinatorRequestDto) {
-        CoordinatorEntity coordinatorEntity = coordinatorDtoMapper.toEntity(coordinatorRequestDto);
+    public CoordinatorEntity insert(CoordinatorEntity coordinatorEntity) {
         return coordinatorRepository.save(coordinatorEntity);
     }
 

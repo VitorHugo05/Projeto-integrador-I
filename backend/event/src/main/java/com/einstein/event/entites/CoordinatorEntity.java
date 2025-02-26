@@ -20,9 +20,10 @@ public class CoordinatorEntity extends UserEntity {
     private List<EventEntity> events = new ArrayList<>();
 
     public CoordinatorEntity() {
+        this.setRole(UserRole.COORDINATOR);
     }
 
-    public CoordinatorEntity(Long id, String email, String password, UserRole role, String name, String cpf, String phone, CourseEntity course, List<EventEntity> events) {
+    public CoordinatorEntity(Long id, String email, String password, String name, String cpf, String phone, CourseEntity course, List<EventEntity> events) {
         super(id, email, password, UserRole.COORDINATOR);
         this.name = name;
         this.cpf = cpf;

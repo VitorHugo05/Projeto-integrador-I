@@ -1,0 +1,7 @@
+package com.einstein.event.services.exceptions;
+
+public class DataAlreadyExistException extends RuntimeException {
+    public DataAlreadyExistException(String message) {
+        super(message);
+    }
+}

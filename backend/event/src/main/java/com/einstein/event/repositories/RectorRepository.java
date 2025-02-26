@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface RectorRepository extends JpaRepository<RectorEntity, Long> {
-    List<RectorEntity> findByCpf(String cpf);
+    Optional<RectorEntity> findByCpf(String cpf);
     Optional<RectorEntity> findByEmail(String email);
 }

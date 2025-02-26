@@ -25,7 +25,7 @@ public class RectorService {
         if(rectorRepository.findByCpf(rectorEntity.getCpf()).isEmpty()) {
             return rectorRepository.save(rectorEntity);
         } else {
-            throw new RuntimeException("Erro ao inserir rector");
+            throw new RuntimeException("Ja existe algum cadastro com este cpf");
         }
     }
 

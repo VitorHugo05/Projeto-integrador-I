@@ -12,9 +12,10 @@ public class RectorEntity extends UserEntity {
     private String phone;
 
     public RectorEntity() {
+        this.setRole(UserRole.RECTOR);
     }
 
-    public RectorEntity(Long id, String email, String password, UserRole role, String name, String cpf, String phone) {
+    public RectorEntity(Long id, String email, String password, String name, String cpf, String phone) {
         super(id, email, password, UserRole.RECTOR);
         this.name = name;
         this.cpf = cpf;

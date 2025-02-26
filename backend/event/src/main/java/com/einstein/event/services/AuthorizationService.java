@@ -45,4 +45,19 @@ public class AuthorizationService implements UserDetailsService {
 
         throw new UsernameNotFoundException("User not found");
     }
+
+    public boolean validateEmail(String email) {
+        boolean validCoordinator = coordinatorRepository.findByEmail(email).isPresent();
+        boolean validStudent = studentRepository.findByEmail(email).isPresent();
+        boolean validRector = rectorRepository.findByEmail(email).isPresent();
+
+        return validCoordinator || validStudent || validRector;
+    }
+
+    public boolean validateCpf(String cpf) {
+        boolean validCoordinator = coordinatorRepository.findByCpf(cpf).isPresent();
+        boolean validRector = rectorRepository.findByCpf(cpf).isPresent();
+
+        return validCoordinator || validRector;
+    }
 }

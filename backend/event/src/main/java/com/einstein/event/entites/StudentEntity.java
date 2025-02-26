@@ -21,6 +21,7 @@ public class StudentEntity extends UserEntity {
     private List<StudentPresenceEntity> presences = new ArrayList<>();
 
     public StudentEntity() {
+        this.setRole(UserRole.STUDENT);
     }
 
     public StudentEntity(Long id, String email, String password, String name, String ra, String phone, CourseEntity course, List<StudentPresenceEntity> presences) {
