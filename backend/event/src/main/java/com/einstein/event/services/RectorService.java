@@ -5,18 +5,20 @@ import com.einstein.event.entites.RectorEntity;
 import com.einstein.event.mapper.RectorDtoMapper;
 import com.einstein.event.repositories.RectorRepository;
 import com.einstein.event.services.exceptions.ObjectNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class RectorService {
-    @Autowired
-    private RectorRepository rectorRepository;
 
-    @Autowired
-    private RectorDtoMapper rectorDtoMapper;
+    private final RectorRepository rectorRepository;
+    private final RectorDtoMapper rectorDtoMapper;
+
+    public RectorService(RectorRepository rectorRepository, RectorDtoMapper rectorDtoMapper) {
+        this.rectorRepository = rectorRepository;
+        this.rectorDtoMapper = rectorDtoMapper;
+    }
 
     public List<RectorEntity> findAll() {
         return rectorRepository.findAll();

@@ -12,10 +12,13 @@ import java.util.List;
 
 @Service
 public class CoordinatorService {
-    @Autowired
-    private CoordinatorRepository coordinatorRepository;
-    @Autowired
-    private CoordinatorDtoMapper coordinatorDtoMapper;
+    private final CoordinatorRepository coordinatorRepository;
+    private final CoordinatorDtoMapper coordinatorDtoMapper;
+
+    public CoordinatorService(CoordinatorRepository coordinatorRepository, CoordinatorDtoMapper coordinatorDtoMapper) {
+        this.coordinatorRepository = coordinatorRepository;
+        this.coordinatorDtoMapper = coordinatorDtoMapper;
+    }
 
     public CoordinatorEntity insert(CoordinatorEntity coordinatorEntity) {
         return coordinatorRepository.save(coordinatorEntity);

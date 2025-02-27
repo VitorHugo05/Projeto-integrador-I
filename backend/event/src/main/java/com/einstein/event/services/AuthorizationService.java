@@ -17,14 +17,15 @@ import java.util.Optional;
 @Service
 public class AuthorizationService implements UserDetailsService {
 
-    @Autowired
-    private CoordinatorRepository coordinatorRepository;
+    private final CoordinatorRepository coordinatorRepository;
+    private final RectorRepository rectorRepository;
+    private final StudentRepository studentRepository;
 
-    @Autowired
-    private RectorRepository rectorRepository;
-
-    @Autowired
-    private StudentRepository studentRepository;
+    public AuthorizationService(CoordinatorRepository coordinatorRepository, RectorRepository rectorRepository, StudentRepository studentRepository) {
+        this.coordinatorRepository = coordinatorRepository;
+        this.rectorRepository = rectorRepository;
+        this.studentRepository = studentRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -6,7 +6,6 @@ import com.einstein.event.entites.CourseEntity;
 import com.einstein.event.mapper.CourseDtoMapper;
 import com.einstein.event.repositories.CourseRepository;
 import com.einstein.event.services.exceptions.ObjectNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,13 +13,15 @@ import java.util.List;
 @Service
 public class CourseService {
 
-    @Autowired
-    private CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
+    private final CoordinatorService coordinatorService;
+    private final CourseDtoMapper courseDtoMapper;
 
-    @Autowired
-    private CoordinatorService coordinatorService;
-    @Autowired
-    private CourseDtoMapper courseDtoMapper;
+    public CourseService(CourseRepository courseRepository, CoordinatorService coordinatorService, CourseDtoMapper courseDtoMapper) {
+        this.courseRepository = courseRepository;
+        this.coordinatorService = coordinatorService;
+        this.courseDtoMapper = courseDtoMapper;
+    }
 
     public CourseEntity insert(CourseEntity courseEntity, String cpf) {
         CoordinatorEntity coordinatorEntity = coordinatorService.findByCpf(cpf);
