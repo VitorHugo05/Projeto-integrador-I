@@ -1,18 +1,21 @@
 package com.einstein.event.dtos.response;
 
 import com.einstein.event.entites.CourseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class CoordinatorResponseDto {
     private String name;
     private String cpf;
     private String phone;
     private String email;
-    private CourseEntity course;
+
+    @JsonIgnoreProperties(value = "coordinator")
+    private CourseResponseDto course;
 
     public CoordinatorResponseDto() {
     }
 
-    public CoordinatorResponseDto(String name, String cpf, String phone, String email, CourseEntity course) {
+    public CoordinatorResponseDto(String name, String cpf, String phone, String email, CourseResponseDto course) {
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
@@ -20,11 +23,11 @@ public class CoordinatorResponseDto {
         this.course = course;
     }
 
-    public CourseEntity getCourse() {
+    public CourseResponseDto getCourse() {
         return course;
     }
 
-    public void setCourse(CourseEntity course) {
+    public void setCourse(CourseResponseDto course) {
         this.course = course;
     }
 

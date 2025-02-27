@@ -1,6 +1,6 @@
 package com.einstein.event.dtos.response;
 
-import com.einstein.event.entites.StudentEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
@@ -9,12 +9,14 @@ public class CourseResponseDto {
     private Long id;
     private String name;
     private CoordinatorCourseDto coordinator;
-    private List<StudentEntity> students;
+
+    @JsonIgnoreProperties(value = {"course", "presences"})
+    private List<StudentResponseDto> students;
 
     public CourseResponseDto() {
     }
 
-    public CourseResponseDto(Long id, String name, CoordinatorCourseDto coordinator, List<StudentEntity> students) {
+    public CourseResponseDto(Long id, String name, CoordinatorCourseDto coordinator, List<StudentResponseDto> students) {
         this.id = id;
         this.name = name;
         this.coordinator = coordinator;
@@ -45,11 +47,11 @@ public class CourseResponseDto {
         this.coordinator = coordinator;
     }
 
-    public List<StudentEntity> getStudents() {
+    public List<StudentResponseDto> getStudents() {
         return students;
     }
 
-    public void setStudents(List<StudentEntity> students) {
+    public void setStudents(List<StudentResponseDto> students) {
         this.students = students;
     }
 }

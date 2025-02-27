@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment=" 🚀 feat: Standardizing controllers">
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/StudentUpdateRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentCourseResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentResponseDto.java" afterDir="false" />
+    <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: added CRUD methods in Student controller">
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/EventRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/EventResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/EventDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CourseResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CourseResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CourseDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/CourseDtoMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,10 @@
       <updated>1740423776442</updated>
       <workItem from="1740423777905" duration="5655000" />
       <workItem from="1740481605477" duration="7994000" />
-      <workItem from="1740582160584" duration="15543000" />
+      <workItem from="1740582160584" duration="15628000" />
+      <workItem from="1740605703092" duration="21000" />
+      <workItem from="1740610650039" duration="4158000" />
+      <workItem from="1740663919634" duration="1186000" />
     </task>
     <task id="LOCAL-00001" summary="🚀 feat: added rector entity to your registration and login">
       <option name="closed" value="true" />
@@ -160,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740596658512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="🚀 feat: added CRUD methods in Student controller">
+      <option name="closed" value="true" />
+      <created>1740599553534</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740599553534</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +183,8 @@
     <MESSAGE value=" fix: error handling in security system and creation of system exception handler" />
     <MESSAGE value="  feat: added insert and find by id methods in course controller" />
     <MESSAGE value="  feat: Standardizing controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="  feat: Standardizing controllers" />
+    <MESSAGE value=" feat: added CRUD methods in Student controller" />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat: added CRUD methods in Student controller" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
