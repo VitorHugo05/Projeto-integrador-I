@@ -26,7 +26,7 @@ public class EventController {
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody EventRequestDto eventRequestDto) {
         EventEntity eventEntity = eventDtoMapper.toEntity(eventRequestDto);
-        eventEntity = eventService.insert(eventEntity, eventRequestDto.getCoordinatorId());
+        eventEntity = eventService.insert(eventEntity, eventRequestDto.getCoordinatorCpf());
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(eventEntity.getId())
@@ -44,9 +44,21 @@ public class EventController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EventResponseDto> findAllByCoordinatorId(@PathVariable Long id){
+    public ResponseEntity<EventResponseDto> findById(@PathVariable Long id){
         EventEntity eventEntity = eventService.findById(id);
         EventResponseDto eventResponseDto = eventDtoMapper.toResponse(eventEntity);
         return ResponseEntity.ok().body(eventResponseDto);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody EventRequestDto eventRequestDto) {
+        eventService.update(eventRequestDto, id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        eventService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -30,12 +30,12 @@ public class EventRequestDto {
     private String location;
     private String code;
 
-    private Long coordinatorId;
+    private String coordinatorCpf;
 
     public EventRequestDto() {
     }
 
-    public EventRequestDto(String title, String description, LocalTime startTime, LocalTime endTime, LocalDate date, LocalDateTime inscriptionStartTime, LocalDateTime inscriptionEndTime, String location, String code, Long coordinatorId) {
+    public EventRequestDto(String title, String description, LocalTime startTime, LocalTime endTime, LocalDate date, LocalDateTime inscriptionStartTime, LocalDateTime inscriptionEndTime, String location, String code, String coordinatorCpf) {
         this.title = title;
         this.description = description;
         this.startTime = startTime;
@@ -45,7 +45,7 @@ public class EventRequestDto {
         this.inscriptionEndTime = inscriptionEndTime;
         this.location = location;
         this.code = code;
-        this.coordinatorId = coordinatorId;
+        this.coordinatorCpf = coordinatorCpf;
     }
 
     public String getTitle() {
@@ -120,11 +120,11 @@ public class EventRequestDto {
         this.code = code;
     }
 
-    public Long getCoordinatorId() {
-        return coordinatorId;
+    public String getCoordinatorCpf() {
+        return coordinatorCpf;
     }
 
-    public void setCoordinatorId(Long coordinatorId) {
-        this.coordinatorId = coordinatorId;
+    public void setCoordinatorCpf(String coordinatorCpf) {
+        this.coordinatorCpf = coordinatorCpf;
     }
 }
