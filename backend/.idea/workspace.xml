@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: standardizing services">
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/PresenceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/InscriptionRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/InscriptionResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentPresenceResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/PresenceDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/PresenceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/PresenceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/BadRequestArgumentException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/ExceptionHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/EventResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/EventResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentPresenceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentPresenceEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/EventDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/EventDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/EventApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/EventApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
