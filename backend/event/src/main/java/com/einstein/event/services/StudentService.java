@@ -51,4 +51,8 @@ public class StudentService {
         findById(id);
         studentRepository.deleteById(id);
     }
+
+    public StudentEntity findByRa(String ra) {
+        return studentRepository.findByRa(ra).orElseThrow(() -> new ObjectNotFoundException("Student not found"));
+    }
 }

@@ -5,16 +5,17 @@ import java.util.List;
 public class StudentResponseDto {
     private Long id;
     private String ra;
+
     private String name;
     private String email;
     private String phone;
     private StudentCourseResponseDto course;
-    private List<StudentPresenceEntity> presences;
+    private List<InscriptionResponseDto> presences;
 
     public StudentResponseDto() {
     }
 
-    public StudentResponseDto(Long id, String ra, String name, String email, String phone, StudentCourseResponseDto course, List<StudentPresenceEntity> presences) {
+    public StudentResponseDto(Long id, String ra, String name, String email, String phone, StudentCourseResponseDto course, List<InscriptionResponseDto> presences) {
         this.id = id;
         this.ra = ra;
         this.name = name;
@@ -72,11 +73,11 @@ public class StudentResponseDto {
         this.course = course;
     }
 
-    public List<StudentPresenceEntity> getPresences() {
+    public List<InscriptionResponseDto> getPresences() {
         return presences;
     }
 
-    public void setPresences(List<StudentPresenceEntity> presences) {
+    public void setPresences(List<InscriptionResponseDto> presences) {
         this.presences = presences;
     }
 }

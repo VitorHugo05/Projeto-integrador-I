@@ -7,12 +7,23 @@
     <list default="true" id="00c987ca-603b-4e17-b705-9bc055ef587e" name="Changes" comment="🚀 feat: standardizing services">
       <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/PresenceController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/request/InscriptionRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/InscriptionResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentPresenceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/PresenceDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/PresenceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/PresenceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/exceptions/BadRequestArgumentException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/controllers/exception/ExceptionHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/CoordinatorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/EventResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/EventResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/dtos/response/StudentResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentPresenceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/entites/StudentPresenceEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/AuthorizationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CoordinatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CoordinatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/RectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/infra/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/EventDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/EventDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/mapper/StudentDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/repositories/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/src/main/java/com/einstein/event/services/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -110,7 +121,7 @@
       <workItem from="1740582160584" duration="15628000" />
       <workItem from="1740605703092" duration="21000" />
       <workItem from="1740610650039" duration="4158000" />
-      <workItem from="1740663919634" duration="2578000" />
+      <workItem from="1740663919634" duration="10249000" />
     </task>
     <task id="LOCAL-00001" summary="🚀 feat: added rector entity to your registration and login">
       <option name="closed" value="true" />
@@ -184,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740665661392</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="🚀 feat: standardizing services">
+      <option name="closed" value="true" />
+      <created>1740666581412</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740666581412</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

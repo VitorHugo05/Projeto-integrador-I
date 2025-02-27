@@ -2,6 +2,7 @@ package com.einstein.event.controllers.exception;
 
 
 import com.einstein.event.services.exceptions.DataAlreadyExistException;
+import com.einstein.event.services.exceptions.BadRequestArgumentException;
 import com.einstein.event.services.exceptions.IncorrectCredentialsException;
 import com.einstein.event.services.exceptions.ObjectNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,6 +32,13 @@ public class ExceptionHandlerController {
     public ResponseEntity<StandardError> dataAlreadyExist(HttpServletRequest request, DataAlreadyExistException e) {
         HttpStatus status = HttpStatus.CONFLICT;
         StandardError error = new StandardError(System.currentTimeMillis(), status.value(), "Data already exist", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(status).body(error);
+    }
+
+    @ExceptionHandler(BadRequestArgumentException.class)
+    public ResponseEntity<StandardError> badRequest(HttpServletRequest request, BadRequestArgumentException e) {
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        StandardError error = new StandardError(System.currentTimeMillis(), status.value(), "Bad request", e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(error);
     }
 }

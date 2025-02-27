@@ -1,7 +1,6 @@
 package com.einstein.event.infra.security;
 
 import com.einstein.event.services.exceptions.CustomAccessDeniedHandler;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -20,14 +19,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-    @Autowired
-    private CustomAccessDeniedHandler customAccessDeniedHandler;
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
+    private final SecurityFilter securityFilter;
+    private final ExceptionHandlerFilter exceptionHandlerFilter;
 
-    @Autowired
-    private SecurityFilter securityFilter;
-
-    @Autowired
-    private ExceptionHandlerFilter exceptionHandlerFilter;
+    public SecurityConfiguration(CustomAccessDeniedHandler customAccessDeniedHandler, SecurityFilter securityFilter, ExceptionHandlerFilter exceptionHandlerFilter) {
+        this.customAccessDeniedHandler = customAccessDeniedHandler;
+        this.securityFilter = securityFilter;
+        this.exceptionHandlerFilter = exceptionHandlerFilter;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -38,6 +38,11 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/coordinator").hasAnyRole("ADMIN", "RECTOR")
                         .requestMatchers("/api/course").hasAnyRole("ADMIN", "RECTOR")
                         .requestMatchers("/api/event").hasAnyRole("ADMIN", "RECTOR", "COORDINATOR")
+                        .requestMatchers("/api/presence/inscription").hasAnyRole("STUDENT", "ADMIN")
+                        .requestMatchers("/api/presence/event")
+                        .hasAnyRole("ADMIN", "RECTOR", "COORDINATOR")
+                        .requestMatchers("/api/presence/student")
+                        .hasAnyRole("ADMIN", "RECTOR", "COORDINATOR", "STUDENT")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex.accessDeniedHandler(customAccessDeniedHandler))

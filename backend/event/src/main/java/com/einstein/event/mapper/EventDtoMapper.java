@@ -6,11 +6,10 @@ import com.einstein.event.entites.EventEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PresenceDtoMapper.class})
 public interface EventDtoMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "coordinator", ignore = true)
-    @Mapping(target = "studentPresenceList", ignore = true)
     EventEntity toEntity(EventRequestDto eventRequestDto);
 
     EventResponseDto toResponse(EventEntity eventEntity);

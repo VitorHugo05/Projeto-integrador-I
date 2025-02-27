@@ -1,8 +1,7 @@
 package com.einstein.event.dtos.response;
 
-import com.einstein.event.entites.CoordinatorEntity;
-import com.einstein.event.entites.StudentPresenceEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -38,12 +37,13 @@ public class EventResponseDto {
 
     private CoordinatorCourseDto coordinator;
 
-    private List<StudentPresenceEntity> studentPresenceList;
+    @JsonIgnoreProperties(value = {"eventId", "title", "description", "startTime", "endTime", "date"})
+    private List<InscriptionResponseDto> studentPresenceList;
 
     public EventResponseDto() {
     }
 
-    public EventResponseDto(Long id, String title, String description, LocalTime startTime, LocalTime endTime, LocalDate date, LocalDateTime inscriptionStartTime, LocalDateTime inscriptionEndTime, String location, String code, CoordinatorCourseDto coordinator, List<StudentPresenceEntity> studentPresenceList) {
+    public EventResponseDto(Long id, String title, String description, LocalTime startTime, LocalTime endTime, LocalDate date, LocalDateTime inscriptionStartTime, LocalDateTime inscriptionEndTime, String location, String code, CoordinatorCourseDto coordinator, List<InscriptionResponseDto> studentPresenceList) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -146,11 +146,11 @@ public class EventResponseDto {
         this.coordinator = coordinator;
     }
 
-    public List<StudentPresenceEntity> getStudentPresenceList() {
+    public List<InscriptionResponseDto> getStudentPresenceList() {
         return studentPresenceList;
     }
 
-    public void setStudentPresenceList(List<StudentPresenceEntity> studentPresenceList) {
+    public void setStudentPresenceList(List<InscriptionResponseDto> studentPresenceList) {
         this.studentPresenceList = studentPresenceList;
     }
 }

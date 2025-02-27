@@ -2,8 +2,12 @@ package com.einstein.event.entites;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
-@Table(name = "tb_student_presence")
+@Table(name = "tb_student_presence", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"student_id", "event_id"})
+})
 public class StudentPresenceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

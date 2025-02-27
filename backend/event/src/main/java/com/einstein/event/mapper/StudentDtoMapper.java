@@ -7,7 +7,7 @@ import com.einstein.event.entites.StudentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PresenceDtoMapper.class})
 public interface StudentDtoMapper {
     @Mapping(target = "course", ignore = true)
     StudentEntity toEntity(StudentRequestDto studentRequestDto);
